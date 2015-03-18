@@ -1,0 +1,16 @@
+<div class="row text-center">
+	<div class="col-sm-12">
+		<h1>Right now, I'm having a strong urge to</h1>
+		<hr>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-12" ng-repeat="urge in urges">
+				<a ng-click="selectUrge(urge)" class="btn btn-success btn-lg btn-block" ng-bind="urge" style="margin-top: 10px"></a>
+			</div>
+		</div>
+	</div>
+</div>

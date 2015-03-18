@@ -1,0 +1,45 @@
+<div class="row text-center">
+	<div class="row">
+		<div class="col-sm-12" ng-show="waiting">
+			<h1>Wait It Out</h1>
+			<p class="lead">
+				Now, you have to wait <strong>10 minutes</strong>. If, after waiting, you still have the urge to {{ urgeName }}, then <strong>you can indulge, totally guilt-free.</strong>
+			</p>
+			<div class="progress-wrapper">
+				<div
+					round-progress
+					max="timeToWait"
+					current="currentTime"
+					color="#45ccce"
+					bgcolor="#eaeaea"
+					radius="100"
+					stroke="20"
+					semi="false"
+					rounded="true"
+					iterations="50"
+				animation="easeInOutQuart"></div>
+			</div>
+			<h2>{{ (remaining / 60)|floor }}:{{ remaining % 60|leadingZeros:2 }} remaining</h2>
+			<hr>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<p class="lead text-center">
+			While you wait, read these inspiring quotes
+		</p>
+	</div>
+
+	<div class="col-sm-12">
+		<blockquote>
+			<p ng-bind="quote.quote"></p>
+			<small ng-bind="quote.author"></small>
+		</blockquote>
+	</div>
+
+	<div class="col-sm-12">
+		<button ng-click="nextQuote()" class="btn btn-success btn-lg btn-block"> <i class="glyphicon glyphicon-refresh"></i> New Quote</button>
+	</div>
+
+</div>
