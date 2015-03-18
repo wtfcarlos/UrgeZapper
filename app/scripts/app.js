@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngAudio',
+    'angulartics', 'angulartics.google.analytics',
     'angular-svg-round-progress'
   ])
   .config(function ($routeProvider) {
