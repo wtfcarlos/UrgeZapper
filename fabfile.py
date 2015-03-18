@@ -7,5 +7,5 @@ env.hosts = ['urgezapper.com']
 
 def deploy():
 	code_dir = '/usr/share/nginx/html'
-	#local('grunt build')
+	local('grunt build')
 	put('dist', code_dir)
