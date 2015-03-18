@@ -8,7 +8,7 @@
  * Controller of the urgezapperApp
  */
 angular.module('urgezapperApp')
-  .controller('WaitController', ['$scope', '$interval', '$location', 'ngAudio', 'UrgeService', 'QuoteService', function ($scope, $interval, $location, ngAudio, UrgeService, QuoteService) {
+  .controller('WaitController', ['$scope', '$interval', '$location', 'ngAudio', 'UrgeService', 'QuoteService', '$analytics', function ($scope, $interval, $location, ngAudio, UrgeService, QuoteService, $analytics) {
     
   	$scope.timeToWait = 60 * 10; // Time in seconds
   	$scope.currentTime = 0;
@@ -17,10 +17,13 @@ angular.module('urgezapperApp')
 
   	$scope.waiting = true;
     $scope.urgeName = UrgeService.urgeName;
+
+    $analytics.eventTrack('waitStarted');
     
     $scope.nextQuote = function() {
       QuoteService.nextAsync().then(function(data) {
         $scope.quote = data.data;
+        $analytics.eventTrack('newQuote');
       });
     };
 
@@ -36,6 +39,7 @@ angular.module('urgezapperApp')
   			$scope.chime.play();
   			$scope.waiting = false;
   			$location.path('/decide');
+        $analytics.eventTrack('waitComplete');
   		}
 
   	}, 1000);
