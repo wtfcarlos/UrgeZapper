@@ -13,7 +13,7 @@ angular.module('urgezapperApp')
   	$scope.timeToWait = 60 * 10; // Time in seconds
   	$scope.currentTime = 0;
   	$scope.remaining = $scope.timeToWait;
-  	$scope.chime = ngAudio.load("sounds/chime.wav");
+  	$scope.chime = ngAudio.load('sounds/chime.wav');
 
   	$scope.waiting = true;
     $scope.urgeName = UrgeService.urgeName;
@@ -23,7 +23,7 @@ angular.module('urgezapperApp')
     $scope.nextQuote = function() {
       QuoteService.nextAsync().then(function(data) {
         $scope.quote = data.data;
-        $analytics.eventTrack('newQuote');
+        $analytics.eventTrack('newQuote', {category: 'newQuote'});
       });
     };
 
@@ -39,7 +39,7 @@ angular.module('urgezapperApp')
   			$scope.chime.play();
   			$scope.waiting = false;
   			$location.path('/decide');
-        $analytics.eventTrack('waitComplete');
+        $analytics.eventTrack('waitComplete', {category: 'waitComplete'});
   		}
 
   	}, 1000);
@@ -54,14 +54,14 @@ angular.module('urgezapperApp')
   	return function(input) {
   		input = input || 0;
   		return Math.floor(input);
-  	}
+  	};
   })
   .filter('leadingZeros', function() {
   	return function(input, zeroCount) {
   		input = input || 0;
-  		var s = input + "";
+  		var s = input + '';
   		while (s.length < zeroCount) {
-  			s = "0" + s;
+  			s = '0' + s;
   		}
   		return s;
   	}

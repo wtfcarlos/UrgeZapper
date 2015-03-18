@@ -18,11 +18,11 @@ angular.module('urgezapperApp')
 
 
   		
-  		if (urgeName == 'I\'d Rather Not Say') {
-  			urgeName = "Temptation";
+  		if (urgeName === 'I\'d Rather Not Say') {
+  			urgeName = 'Temptation';
   		}
 
-      $analytics.eventTrack('urgeSelected', {'urgeName': urgeName});
+      $analytics.eventTrack('urgeSelected', {'category': 'urgeSelected', 'urgeName': urgeName});
 
   		$location.path('/urge/' + urgeName.toLowerCase());
 

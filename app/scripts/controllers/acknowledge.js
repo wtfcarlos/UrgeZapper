@@ -10,8 +10,8 @@
 angular.module('urgezapperApp')
   .controller('AcknowledgeController', ['$scope', '$timeout', '$location', 'ngAudio', 'UrgeService', '$analytics', function ($scope, $timeout, $location, ngAudio, UrgeService, $analytics) {
     
-    $scope.feelButtonMessage = "Feel the Urge";
-    $scope.chime = ngAudio.load("sounds/chime.wav");
+    $scope.feelButtonMessage = 'Feel the Urge';
+    $scope.chime = ngAudio.load('sounds/chime.wav');
     $scope.urgeName = UrgeService.urgeName;
 
     if (!$scope.urgeName.length) {
@@ -23,16 +23,16 @@ angular.module('urgezapperApp')
  	$scope.feel = function() {
 
  		if (!$scope.hasPressedFeel) {
- 			$scope.feelButtonMessage = "Close your eyes now.";
-	 		$analytics.eventTrack('feelStarted');
+ 			$scope.feelButtonMessage = 'Close your eyes now.';
+	 		$analytics.eventTrack('feelStarted', {category: 'feelStarted'});
 
 	 		$timeout(function(){
-	 			$scope.feelButtonMessage = "You did it.";
+	 			$scope.feelButtonMessage = 'You did it.';
 	 			$scope.chime.play();
 
 	 			$timeout(function() {
 	 				$location.path('/wait');
-	 				$analytics.eventTrack('feelEnded');
+	 				$analytics.eventTrack('feelEnded', {category: 'feelEnded'});
 	 			}, 1000);
 
 	 		}, 60000);
