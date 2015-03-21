@@ -22,7 +22,7 @@ angular.module('urgezapperApp')
   			urgeName = 'Temptation';
   		}
 
-      $analytics.eventTrack('urgeSelected', {'category': 'urgeSelected', 'urgeName': urgeName});
+      $analytics.eventTrack('urgeSelected', {'category': urgeName});
 
   		$location.path('/urge/' + urgeName.toLowerCase());
 
