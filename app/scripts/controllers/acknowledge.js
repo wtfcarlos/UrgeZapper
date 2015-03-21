@@ -11,7 +11,7 @@ angular.module('urgezapperApp')
   .controller('AcknowledgeController', ['$scope', '$timeout', '$location', 'ngAudio', 'UrgeService', '$analytics', function ($scope, $timeout, $location, ngAudio, UrgeService, $analytics) {
     
     $scope.feelButtonMessage = 'Feel the Urge';
-    $scope.chime = ngAudio.load('sounds/chime.wav');
+    $scope.chime = ngAudio.load('sounds/chime.mp3');
     $scope.urgeName = UrgeService.urgeName;
 
     if (!$scope.urgeName.length) {

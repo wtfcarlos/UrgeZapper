@@ -13,10 +13,12 @@ angular.module('urgezapperApp')
   	$scope.timeToWait = 60 * 10; // Time in seconds
   	$scope.currentTime = 0;
   	$scope.remaining = $scope.timeToWait;
-  	$scope.chime = ngAudio.load('sounds/chime.wav');
+  	$scope.chime = ngAudio.load('sounds/chime.mp3');
 
   	$scope.waiting = true;
     $scope.urgeName = UrgeService.urgeName;
+
+    $scope.isSerious = UrgeService.isSerious();
 
     $analytics.eventTrack('waitStarted');
     
@@ -64,5 +66,5 @@ angular.module('urgezapperApp')
   			s = '0' + s;
   		}
   		return s;
-  	}
+  	};
   });
