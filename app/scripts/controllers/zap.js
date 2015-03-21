@@ -10,7 +10,7 @@
 angular.module('urgezapperApp')
   .controller('ZapController', ['$scope', '$location', 'ngAudio', function ($scope, $location, ngAudio) {
     
-    $scope.zap = ngAudio.load("sounds/zap.wav");
+    $scope.zap = ngAudio.load('sounds/zap.mp3');
 
     $scope.zap.play();
 

@@ -4,7 +4,13 @@
 		<div class="col-sm-12" ng-show="waiting">
 			<h1>Wait It Out</h1>
 			<p class="lead">
-				Now, you have to wait <strong>10 minutes</strong>. If, after waiting, you still have the urge to {{ urgeName }}, then <strong>you can indulge, totally guilt-free.</strong>
+				Now, you have to wait <strong>10 minutes</strong>. 
+				<span ng-show="!isSerious">
+					If, after waiting, you still have the urge to {{ urgeName }}, then <strong>you can indulge, totally guilt-free.</strong>
+				</span>
+				<span ng-show="isSerious">
+					You will find that after waiting, the urge will <b>be gone</b> or mostly gone. Hang on in there.
+				</span>
 			</p>
 			<div class="progress-wrapper">
 				<div

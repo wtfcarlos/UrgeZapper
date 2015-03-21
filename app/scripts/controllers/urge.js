@@ -10,7 +10,7 @@
 angular.module('urgezapperApp')
   .controller('UrgeController', ['$scope', '$location', '$analytics', function ($scope, $location, $analytics) {
     
-  	$scope.urges = ['PMO', 'Binge Eat', 'Smoke', 'Drink', 'Go on Facebook', 'Use', 'Self-Harm' , 'I\'d Rather Not Say'];
+  	$scope.urges = ['PMO', 'Binge Eat', 'Smoke', 'Drink', 'Procrastinate', 'Go on Facebook', 'Use', 'Self-Harm' , 'I\'d Rather Not Say'];
 
 
 

@@ -3,9 +3,14 @@
 angular.module('urgezapperApp')
 .service('UrgeService',  function(){
 
-	return {
-		urgeName: ''
+	var urgeService = {
+		urgeName : '',
+		isSerious: function() {
+			return (urgeService.urgeName === 'self-harm' || urgeService.urgeName === 'use' || urgeService.urgeName === 'temptation');
+		}
 	};
+
+	return urgeService;
 
 })
 .service('QuoteService', ['$http', function($http) {
