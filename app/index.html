@@ -51,6 +51,7 @@
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-550e3ef535b524a5" async="async"></script>
 
+
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -121,14 +122,8 @@
       </div>   
       <div class="row">
         <div class="col-sm-12 text-center">
-          <span analytics-category="footer-fb" analytics-on="click" class='st_facebook_large' displayText='Facebook'></span>
-<span analytics-category="footer-tw" analytics-on="click" class='st_twitter_large' displayText='Tweet'></span>
-<span analytics-category="footer-reddit" analytics-on="click" class='st_reddit_large' displayText='Reddit'></span>
-<span analytics-category="footer-tumblr" analytics-on="click" class='st_tumblr_large' displayText='Tumblr'></span>
-<span analytics-category="footer-pinterest" analytics-on="click" class='st_pinterest_large' displayText='Pinterest'></span>
-<span analytics-category="footer-whats" analytics-on="click" class='st_whatsapp_large' displayText='WhatsApp'></span>
-<span analytics-category="footer-email" analytics-on="click" class='st_email_large' displayText='Email'></span>
-<span analytics-category="footer-sharethis" analytics-on="click" class='st_sharethis_large' displayText='ShareThis'></span>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_sharing_toolbox"></div>
         </div>
       </div>         
       </div>
@@ -141,9 +136,21 @@
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
        ga('create', 'UA-60825120-1');
+       var addthis_share = addthis_share || {}
+        addthis_share = {
+          url: 'http://www.urgezapper.com',
+          title: 'Break the Habit - UrgeZapper',
+          description: 'Try this FREE new technique to handle event the strongest urges and finally break the habit.',
+          passthrough : {
+            twitter: {
+              via: 'UrgeZapper',
+              text: 'Break the Habit using a revolutionary technique - FOR FREE!'
+            }
+          }
+        }
     </script>
+</script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
